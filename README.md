@@ -1,12 +1,10 @@
-> Notar que **X** corresponde al número del grupo asignado.
+# Grupo 13
 
-# Grupo x
+Este es el repositorio del *Grupo 13*, cuyos integrantes son:
 
-Este es el repositorio del *Grupo X*, cuyos integrantes son:
-
-* Integrante 1 - Rol
-* Integrante 2 - Rol
-* Integrante 3 - Rol
+* Nangel Coello - Rol
+* Aymara Rojas - 20204665-4
+* Matias Sandobal - Rol
 * **Tutor**: Nombre Tutor
 
 ## Wiki
@@ -17,11 +15,7 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://gitlab.inf.utfsm.
 
 ## Videos
 
-> Reemplazar con los enlaces correspondientes
-
-* [Video presentación cliente](https://www.youtube.com)
-* [Video presentación avance 1](https://www.youtube.com/)
-* Etc ...
+* [Video presentación Hito 1](https://youtu.be/2641tP1aIvU?si=_HlVjZZSQiuxmqYd)
 
 ## Aspectos técnicos relevantes
 
