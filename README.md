@@ -11,7 +11,7 @@ Este es el repositorio del *Grupo 13*, cuyos integrantes son:
 
 > Obtener enlace desde el home de la wiki del repo.
 
-Puede acceder a la Wiki mediante el siguiente [enlace](https://gitlab.inf.utfsm.cl/)
+Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/Nachops/INF236P201G13/wiki)
 
 ## Videos
 
