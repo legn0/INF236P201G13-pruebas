@@ -2,7 +2,7 @@
 
 Este es el repositorio del *Grupo 13*, cuyos integrantes son:
 
-* Nangel Coello - Rol
+* Nangel Coello - 202173591-7
 * Aymara Rojas - 20204665-4
 * Matias Sandobal - 203104684-4
 * **Tutor**: Ignacio Muñoz
