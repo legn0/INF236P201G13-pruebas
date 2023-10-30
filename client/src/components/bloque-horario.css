@@ -1,0 +1,27 @@
+.bloque-horario {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    font-size: 100%;
+}
+
+.buttons-block{
+    display: flex;
+}
+
+.boton-agendar:disabled {
+    background-color: #ccc;
+    pointer-events: none;
+}
+
+.boton-expandir {
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+

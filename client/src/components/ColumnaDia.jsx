@@ -1,4 +1,5 @@
-import MiniaturaBloquesHorarios from "./MiniaturaBloquesHorarios";
+import MiniaturaBloqueHorario from "./MiniaturaBloqueHorario";
+import BotonReservarHora from "./BotonReservarHora";
 import "./ColumnaDia.css";
 
 function ColumnaDia(prop) {
@@ -36,24 +37,26 @@ function ColumnaDia(prop) {
   const getBloque = (index) => {
     if (bloques_usados.includes(index)) {
       return (
-        <MiniaturaBloquesHorarios
-          hora={index}
-          fecha={prop.fecha}
-          examen={prop.tipoExamen}
+        <MiniaturaBloqueHorario
+          disponibilidadInicial={5}
+          disponilidadTotal={8}
         />
       );
     } else {
-      return <p>bloque disponible</p>;
+      return (
+        <MiniaturaBloqueHorario
+          disponibilidadInicial={8}
+          disponilidadTotal={8}
+        />
+      );
     }
   };
 
   return (
     <div className="columna-dia">
-      <h2 className="cabecera-columna">{prop.dia}</h2>
-      <h3 className="cabecera-columna">{prop.fecha}</h3>
       <ul className="lista-horarios">
         {bloques_totales.map((item) => (
-          <li key={item} class="bloque-horario">
+          <li key={item} className="block-container">
             {getBloque(item)}
           </li>
         ))}

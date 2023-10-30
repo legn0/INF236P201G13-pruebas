@@ -15,10 +15,11 @@
     border-top-color: rgba(30, 30, 30, 0.2);
 
 }
-/* .bloque-horario{
-    border-style: groove;
-    border-color: rgba(30, 30, 30, 0.2)
-} */
+
 .bloque-horario:hover{
     background-color: rgba(30, 30, 30, 0.2);
+}
+
+.block-container{
+    width: 100%;
 }

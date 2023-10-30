@@ -1,5 +1,6 @@
 import DetalleExamen from "./DetalleExamen";
 import { useState } from "react";
+import "./MiniaturaExamen.css";
 const datos_falsos = ["Juan", "diego"];
 
 function MiniaturaExamen(prop) {
@@ -8,7 +9,7 @@ function MiniaturaExamen(prop) {
   //del prop viene el nombre, medico derivante y id del examen para la consulta del detalle
   return (
     <div className="miniatura-examen">
-      <button onClick={() => setButtonPopup(true)}>
+      <button onClick={() => setButtonPopup(true)} className="botoncito">
         <h4>Paciente: {prop.nombrepaciente}</h4>
         <h4>Medico tratante: {prop.medicotratante}</h4>
       </button>
