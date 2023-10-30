@@ -1,0 +1,25 @@
+.columna-dia{
+    width: 14%;
+    border-style: groove;
+    border-color: rgba(30, 30, 30, 0.2)
+}
+
+.cabecera-columna{
+    text-align: center;
+
+}
+
+.lista-horarios{
+    list-style-type: none;
+    border-top-style: groove;
+    border-top-color: rgba(30, 30, 30, 0.2);
+
+}
+
+.bloque-horario:hover{
+    background-color: rgba(30, 30, 30, 0.2);
+}
+
+.block-container{
+    width: 100%;
+}
