@@ -1,8 +1,7 @@
-import ColumnaDia from "./components/ColumnaDia";
 import "./App.css";
-import MiniaturaExamen from "./components/MiniaturaExamen";
-import MiniaturaBloqueHorario from "./components/MiniaturaBloqueHorario";
 import Calendar from "./components/Calendar";
+import MainPage from "./components/MainPage";
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
