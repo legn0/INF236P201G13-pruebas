@@ -20,6 +20,7 @@ app.use(cors());
 //Cosas estaticas
 app.use("/pacientes", require("./Routes/PacienteRuta"));
 app.use("/examenes", require("./Routes/ExamenRuta"));
+app.use("/empleados", require("./Routes/EmpleadoRuta"))
 
 db();
 

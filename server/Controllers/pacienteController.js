@@ -32,7 +32,15 @@ const crearPaciente = asyncHandler(async (req, res) => {
     }
 })
 
+const getPacienteId = asyncHandler(async (req,res)=>{
+    if (!req?.params?.id) return res.status(400).json({'message': "Id requerido"});
+    const pacientes = await Paciente.find({_id: req.params.id}).exec();
+    if (!pacientes) return res.status(204).json({'message': 'No se encontraron pacientes con ese id'})
+    res.json(pacientes);
+})
+
 module.exports = {
     getAllPacientes,
-    crearPaciente
+    crearPaciente,
+    getPacienteId
 }

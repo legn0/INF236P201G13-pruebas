@@ -1,10 +1,10 @@
 import {
     createSelector,
-    createEmptyAdapter
+    createEntityAdapter
 } from "@reduxjs/toolkit";
 import { apiSlice } from "../../app/api/appSlice";
 
-const examenesAdapter = createEmptyAdapter({})
+const examenesAdapter = createEntityAdapter({})
 
 const initialState = examenesAdapter.getInitialState()
 
@@ -17,7 +17,7 @@ export const examenesApiSlice = apiSlice.injectEndpoints({
             },
             transformResponse: responseData => {
                 const loadedExamenes = responseData.map(examen => {
-                    examen.ide = examen._id
+                    examen.id = examen._id
                     return examen
                 });
                 return examenesAdapter.setAll(initialState, loadedExamenes)
@@ -32,19 +32,34 @@ export const examenesApiSlice = apiSlice.injectEndpoints({
             }
         }),
         getExamenesFecha: builder.query({
-            query: (id) => ({url: `/examenes/${id}`})
+            query: (fecha) => ({url: `/examenes/${fecha}`,
+            method: 'GET'})
+        }),
+        getExamenesFechaBloque: builder.query({
+            query: ({fecha,bloque}) => `/examenes/block/${fecha}/${bloque}`
+        }),
+        getExamenId: builder.query({
+            query: (id) => `/examenes/id/${id}`
         })
+
+
     }),
 })
 
 export const {
     useGetExamenesQuery,
+    useGetExamenesFechaQuery,
+    useGetExamenesFechaBloqueQuery,
+    useGetExamenIdQuery
 } = examenesApiSlice
 
 export const selectExamenesResult = examenesApiSlice.endpoints.getExamenes.select()
+export const selectExamenesFechaResult = examenesApiSlice.endpoints.getExamenesFecha.select()
+export const selectExamenesFechaBloqueResult = examenesApiSlice.endpoints.getExamenesFechaBloque.select()
+export const selectExamenIdResult = examenesApiSlice.endpoints.getExamenId.select()
 
 const selectExamenesData = createSelector(
-    selectExamenesResult,
+    [selectExamenesResult, selectExamenesFechaResult, selectExamenesFechaBloqueResult,selectExamenIdResult],
     examenesResult => examenesResult.data
 )
 

@@ -40,19 +40,24 @@ export const pacientesApiSlice = apiSlice.injectEndpoints({
             invalidatesTags: [
                 {type: 'Paciente', id: 'LIST'}
             ]
+        }),
+        getPacienteId: builder.query({
+            query: (id) => `/pacientes/${id}`
         })
     }),
 })
 
 export const {
     useGetPacientesQuery,
-    useAddNewPacienteMutation
+    useAddNewPacienteMutation,
+    useGetPacienteIdQuery
 } = pacientesApiSlice
 
 export const selectPacientesResult = pacientesApiSlice.endpoints.getPacientes.select()
+export const selectPacienteIdResult = pacientesApiSlice.endpoints.getPacienteId.select()
 
 const selectPacientesData = createSelector(
-    selectPacientesResult,
+    [selectPacientesResult, selectPacienteIdResult],
     pacientesResult => pacientesResult.data
 )
 

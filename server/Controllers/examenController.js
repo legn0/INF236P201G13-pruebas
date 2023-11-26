@@ -33,13 +33,28 @@ const crearExamen = asyncHandler(async (req, res) => {
 
 const getExamenesFecha = asyncHandler(async (req, res) => {
     if (!req?.params?.fecha) return res.status(400).json({'merssage': "Fecha requerida"});
-    const examenes = await Examen.find({fecha: req.body.fecha}).exec();
+    const examenes = await Examen.find({fecha: req.params.fecha}).exec();
     if (!examenes) return res.status(204).json({'message': 'No se encontraron examenes'})
     res.json(examenes);
-}
- ) 
+})
+
+const getExamenesFechaBloque = asyncHandler(async (req,res) =>{
+    if (!req?.params?.fecha || !req?.params?.bloque) return res.status(400).json({'merssage': "Fecha y bloque requeridos"});
+    const examenes = await Examen.find({fecha: req.params.fecha, hora_inicio: req.params.bloque}).exec();
+    if (!examenes) return res.status(204).json({'message': 'No se encontraron examenes'})
+    res.json(examenes);
+})
+
+const getExamenesId = asyncHandler(async (req, res) => {
+    if (!req?.params?.id) return res.status(400).json({'merssage': "id requerido"});
+    const examenes = await Examen.find({_id: req.params.id}).exec();
+    if (!examenes) return res.status(204).json({'message': 'No se encontraron examenes'})
+    res.json(examenes);
+})
 module.exports = {
     getAllExamenes,
     crearExamen,
-    getExamenesFecha
+    getExamenesFecha,
+    getExamenesFechaBloque,
+    getExamenesId
 }

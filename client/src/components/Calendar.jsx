@@ -61,9 +61,9 @@ const Calendar = () => {
         <>
           <ColumnaDia
             className="columna-dia"
-            tipoExamen="Radiografia"
+            tipoExamen="radiografia"
             dia="Martes"
-            fecha="06-08-2024"
+            fecha="2023-11-30"
           />
         </>
       );
